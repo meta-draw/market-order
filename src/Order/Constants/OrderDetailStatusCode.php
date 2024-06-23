@@ -1,6 +1,6 @@
 <?php
 
-namespace Metadraw\Order\Constants;
+namespace SkinsPay\Order\Constants;
 
 enum OrderDetailStatusCode: int
 {
