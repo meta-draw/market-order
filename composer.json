@@ -1,0 +1,13 @@
+{
+    "name": "metadraw/market-order",
+    "description": "A package for managing market orders and trade status",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Metadraw\\Order\\Constants\\": "src/Order/Constants/"
+        }
+    },
+    "require": {
+        "php": ">=8.2"
+    }
+}
