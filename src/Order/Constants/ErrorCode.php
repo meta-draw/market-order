@@ -9,5 +9,5 @@ enum ErrorCode: int
 
     case ListingItemExisted = 42211;
 
-    
+    case OrderNotFound = 42404;
 }
