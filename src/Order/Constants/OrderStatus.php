@@ -11,8 +11,12 @@ enum OrderStatus: int
     case Success = 400;
     case Failed = 999;
 
-    public static function fromDetailStatusCode(OrderDetailStatusCode $orderDetailStatusCode): self
+    public static function fromDetailStatusCode(OrderDetailStatusCode $orderDetailStatusCode, self $currentStatus): self
     {
+        if ($currentStatus === self::WaitingForDelivery && $orderDetailStatusCode === OrderDetailStatusCode::Unknown) {
+            return self::WaitingForDelivery;
+        }
+
         return match ($orderDetailStatusCode) {
             OrderDetailStatusCode::CreatedNeedsConfirmation,
             OrderDetailStatusCode::WaitingForDelivery => self::WaitingForDelivery,
