@@ -2,7 +2,7 @@
 
 namespace SkinsPay\Order\Constants;
 
-enum CreateTradeErrorCode: int
+enum SendTradeErrorCode: int
 {
     case UNKNOWN = 2;
     case TIMEOUT = 16;
