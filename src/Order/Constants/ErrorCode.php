@@ -11,7 +11,7 @@ enum ErrorCode: int
 
     case OrderNotFound = 42404;
 
-    case SEND_TRADE_ERROR_UNKNOWN = 44002;
+    case SEND_TRADE_ERROR_FAIL = 44002;
 
     case SEND_TRADE_ERROR_TIMEOUT = 44016;
 
@@ -26,7 +26,7 @@ enum ErrorCode: int
     public static function fromSendTradeErrorCode(SendTradeErrorCode $sendTradeErrorCode): self
     {
         return match ($sendTradeErrorCode) {
-            SendTradeErrorCode::UNKNOWN => self::SEND_TRADE_ERROR_UNKNOWN,
+            SendTradeErrorCode::FAIL => self::SEND_TRADE_ERROR_FAIL,
             SendTradeErrorCode::TIMEOUT => self::SEND_TRADE_ERROR_TIMEOUT,
             SendTradeErrorCode::INVALID_TRADE_URL => self::SEND_TRADE_ERROR_INVALID_TRADE_URL,
             SendTradeErrorCode::ITEM_NOT_EXISTED => self::SEND_TRADE_ERROR_ITEM_NOT_EXISTED,
