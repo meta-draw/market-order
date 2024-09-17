@@ -20,7 +20,7 @@ enum SteamTradeOfferStatus: int
 
     public function toString(): string
     {
-        return match($this) {
+        return match ($this) {
             self::Invalid => "Invalid",
             self::Active => "Active",
             self::Accepted => "Accepted",
