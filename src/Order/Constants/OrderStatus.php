@@ -9,6 +9,7 @@ enum OrderStatus: int
     case OnHold = 200;
     case WaitingForAccepted = 300;
     case Success = 400;
+    case NeedsInvestigation = 500;
     case Failed = 999;
 
     public static function fromDetailStatusCode(OrderDetailStatusCode $orderDetailStatusCode, self $currentStatus): self
