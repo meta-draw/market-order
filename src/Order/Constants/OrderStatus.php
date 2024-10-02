@@ -32,4 +32,15 @@ enum OrderStatus: int
             OrderDetailStatusCode::Unknown => self::Unknown,
         };
     }
+
+    public static function fromSendTradeErrorCode(SendTradeErrorCode $sendTradeErrorCode): self
+    {
+        return match ($sendTradeErrorCode) {
+            SendTradeErrorCode::ITEM_NOT_EXISTED,
+            SendTradeErrorCode::INVALID_TRADE_URL,
+            SendTradeErrorCode::LIMIT_EXCEEDED,
+            SendTradeErrorCode::FAIL => self::Failed,
+            SendTradeErrorCode::SERVICE_UNAVAILABLE, SendTradeErrorCode::TIMEOUT => self::Unknown,
+        };
+    }
 }
