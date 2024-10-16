@@ -25,5 +25,5 @@ enum ErrorCode: int
     case ItemNotExisted = 440026;
     case LimitExceeded = 440025;
     case ServiceUnavailable = 440020;
-
+    case TooManyTradeOffers = 440099;
 }
