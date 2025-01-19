@@ -14,6 +14,7 @@ enum OrderDetailStatusCode: int
     case CancelledBySecondFactor = 501;
     case UserCountered = 600;
     case InvalidItems = 700;
+    case AccessDenied = 701;
     case OnHold = 800;
     case Success = 900;
 

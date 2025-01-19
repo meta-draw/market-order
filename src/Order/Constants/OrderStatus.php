@@ -28,6 +28,7 @@ enum OrderStatus: int
             OrderDetailStatusCode::UserCountered,
             OrderDetailStatusCode::Expired,
             OrderDetailStatusCode::BuyerDeclined,
+            OrderDetailStatusCode::AccessDenied,
             OrderDetailStatusCode::InvalidItems => self::Failed,
             OrderDetailStatusCode::Unknown => self::Unknown,
         };
