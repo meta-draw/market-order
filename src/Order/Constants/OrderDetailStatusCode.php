@@ -16,7 +16,9 @@ enum OrderDetailStatusCode: int
     case InvalidItems = 700;
     case InvalidTradeUrl = 701;
     case OnHold = 800;
+    case LimitExceeded = 801;
     case Success = 900;
+    case Failed = 999;
 
     public static function fromSteamTradeOfferState(SteamTradeOfferStatus $steamTradeOfferStatus): self
     {
@@ -32,6 +34,16 @@ enum OrderDetailStatusCode: int
             SteamTradeOfferStatus::InEscrow => self::OnHold,
             SteamTradeOfferStatus::Accepted => self::Success,
             SteamTradeOfferStatus::Invalid, SteamTradeOfferStatus::Unknown => self::Unknown,
+        };
+    }
+
+    public static function fromErrorCode(ErrorCode $errorCode): self
+    {
+        return match ($errorCode) {
+            ErrorCode::InvalidTradeUrl => self::InvalidTradeUrl,
+            ErrorCode::LimitExceeded => self::LimitExceeded,
+            ErrorCode::Failed => self::Failed,
+            default => self::Unknown,
         };
     }
 }

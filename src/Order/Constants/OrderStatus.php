@@ -29,6 +29,8 @@ enum OrderStatus: int
             OrderDetailStatusCode::Expired,
             OrderDetailStatusCode::BuyerDeclined,
             OrderDetailStatusCode::InvalidTradeUrl,
+            OrderDetailStatusCode::LimitExceeded,
+            OrderDetailStatusCode::Failed,
             OrderDetailStatusCode::InvalidItems => self::Failed,
             OrderDetailStatusCode::Unknown => self::Unknown,
         };
