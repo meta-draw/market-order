@@ -43,6 +43,7 @@ enum OrderDetailStatusCode: int
             ErrorCode::InvalidTradeUrl => self::InvalidTradeUrl,
             ErrorCode::LimitExceeded => self::LimitExceeded,
             ErrorCode::Failed => self::Failed,
+            ErrorCode::ItemNotExisted => self::InvalidItems,
             default => self::Unknown,
         };
     }
